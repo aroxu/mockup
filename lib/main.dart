@@ -14,9 +14,10 @@ class FootPrint extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const title = "Foot Print";
     return const NeumorphicApp(
-      title: 'Foot Print',
-      home: FootPrintPage(title: 'Foot Print'),
+      title: title,
+      home: FootPrintPage(title: title),
       darkTheme: neumorphicDefaultTheme,
       debugShowCheckedModeBanner: false,
     );
@@ -50,9 +51,9 @@ class _FootPrintPageState extends State<FootPrintPage>
   Widget build(BuildContext context) {
     EdgeInsets systemPadding =
         MediaQuery.of(context).viewPadding; // 시스템 기본 padding값 (상태바 및 SafeArea)
-
     double viewHeight =
         (MediaQuery.of(context).size.height - (systemPadding.top)) * 0.1;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -87,7 +88,8 @@ class _FootPrintPageState extends State<FootPrintPage>
           color: Colors.white,
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButtonLocation:
+          FloatingActionButtonLocation.miniCenterDocked,
       bottomNavigationBar: Stack(
         alignment: const FractionalOffset(.5, 1.0),
         children: [
@@ -98,14 +100,20 @@ class _FootPrintPageState extends State<FootPrintPage>
               child: TabBar(
                 indicatorColor: Colors.white,
                 tabs: const <Tab>[
-                  Tab(icon: Icon(Icons.person_add, color: Colors.white)),
+                  Tab(
+                    icon: Icon(Icons.person_add, color: Colors.white),
+                  ),
                   Tab(
                       icon: Icon(
                     Icons.directions_run,
                     color: Colors.white,
                   )),
-                  Tab(icon: Icon(Icons.edit_note, color: Colors.white)),
-                  Tab(icon: Icon(Icons.ac_unit, color: Colors.white)),
+                  Tab(
+                    icon: Icon(Icons.edit_note, color: Colors.white),
+                  ),
+                  Tab(
+                    icon: Icon(Icons.ac_unit, color: Colors.white),
+                  ),
                 ],
                 controller: controller,
               ),
